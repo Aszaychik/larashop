@@ -43,16 +43,20 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Title</th>
-                              <th scope="col">Price</th>
-                              <th scope="col"></th>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 0 ?>
+                            @php
+                                $no = 0;
+                            @endphp
                             @foreach ($products as $product)
-                            <?php $no++ ?>
+                            @php
+                                $no++;
+                            @endphp
                             <tr>
                                 <th scope="row">{{ $no }}</th>
                                 <td>{{ $product->title }}</td>
