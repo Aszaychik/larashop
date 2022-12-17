@@ -9,7 +9,7 @@
     @endif
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <p>Product</p>
@@ -42,11 +42,12 @@
 
                     <table class="table">
                         <thead class="thead-dark">
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="col">#</th>
+                                <th scope="col">Thumbnail</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Price</th>
-                                <th scope="col"></th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,11 +58,12 @@
                             @php
                                 $no++;
                             @endphp
-                            <tr>
-                                <th scope="row">{{ $no }}</th>
-                                <td>{{ $product->title }}</td>
-                                <td>Rp{{ number_format($product->price,2,",",".") }}</td>
-                                <td>
+                            <tr class="text-center">
+                                <th class="col-1" scope="row">{{ $no }}</th>
+                                <td class="col-4"><img class="img-fluid img-thumbnail w-50" src="{{ $product->image ? asset('/storage/' . $product->image) : 'https://picsum.photos/150/150' }}" alt="{{ $product->title }}"></td>
+                                <td class="col-2 ">{{ $product->title }}</td>
+                                <td class="col-2">Rp{{ number_format($product->price,2,",",".") }}</td>
+                                <td class="col-3">
                                     <button wire:click="editProduct({{ $product->id }})" class="btn btn-sm btn-info text-white">Edit</button>
                                     <button wire:click="deleteProduct({{ $product->id }})" class="btn btn-sm btn-danger">Delete</button>
                                 </td>

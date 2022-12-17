@@ -12,8 +12,8 @@
         @foreach ($products as $product)
         <div class="col-sm-12 col-xs-12 col-md-4 col-lg-3 mb-4">
             <div class="card h-80">
-                <img class="card-img-top img-fluid" src="{{ $product->image ? asset('/storage/' . $product->image) : 'http://placehold.it/150x150' }}" alt="">
-                <div class="card-img-overlay" style="background-color: rgba(0,0,0,0.5);">
+                <img class="card-img-top img-thumbnail" src="{{ $product->image ? asset('/storage/' . $product->image) : 'https://picsum.photos/150/150' }}" alt="">
+                <div class="card-img-overlay d-flex flex-column align-content-center justify-content-between" style="background-color: rgba(0,0,0,0.5);">
                     <h5 class="text-white">
                         <strong>{{ $product->title }}</strong>
                     </h5>

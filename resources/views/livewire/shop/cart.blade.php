@@ -6,6 +6,7 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
+                                <th>Thumbnail</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th></th>
@@ -14,9 +15,10 @@
                         <tbody>
                             @foreach ($cart['products'] as $product)
                             <tr>
-                                <td>{{ $product->title }}</td>
-                                <td>Rp{{ number_format($product->price,2,",",".") }}</td>
-                                <td>
+                                <td class="col-4"><img class="img-fluid img-thumbnail w-50" src="{{ $product->image ? asset('/storage/' . $product->image) : 'https://picsum.photos/150/150' }}" alt="{{ $product->title }}"></td>
+                                <td class="col-3">{{ $product->title }}</td>
+                                <td class="col-3">Rp{{ number_format($product->price,2,",",".") }}</td>
+                                <td class="col-3">
                                     <button wire:click="removeFromCart({{ $product->id }})" class="btn btn-sm btn-danger">Remove</button>
                                 </td>
                             </tr>
