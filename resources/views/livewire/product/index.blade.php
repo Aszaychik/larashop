@@ -11,8 +11,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    Product
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <p>Product</p>
                     <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
                 </div>
 
